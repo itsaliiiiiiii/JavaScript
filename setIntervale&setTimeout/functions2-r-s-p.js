@@ -60,22 +60,21 @@ function playGame(playerMove) {
   updateScoreElement()
   updateImages(playerMove, computerMove)
 
-  // calculate result
-  // update the score and store it using localStorage.setItem
-  // show the new score and the updated images using "document.querySelector"
+}
+var running = false
+
+var intervale;
+function autoPlayGame() {
+  running = running ? false : true ;
+  if (running == true) {
+    intervale = setInterval(() => {
+      playGame(pickComputerMove());
+    }, 500);
+  } else {
+    clearInterval(intervale)
+  }
 }
 
-function autoPlayGame() {
-  // const intervale = playGame(pickComputerMove())
-  // const playbutton = document.querySelector(".auto-play-button")
-  // playbutton.className("hidden")
-  setTimeout(() => {
-    autoPlayGame()
-  }, 3000);
-}
-function stopPlayGame() {
-  clearInterval(intervale)
-}
 
 function updateScoreElement() {
   document.querySelector(
