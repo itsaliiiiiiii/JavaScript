@@ -1,16 +1,17 @@
 let books = [{
-    id : 1,
-    name : "book1"
+    id: 1,
+    name: "book1",
+    user: "ali"
 }];
 
-function addBook(book){
+function addBook(book) {
     books.push(book);
 }
 
-function getBooks(){
+function getBooks() {
     return books;
 }
 
-module.exports= {
+module.exports = {
     addBook, getBooks
 }
