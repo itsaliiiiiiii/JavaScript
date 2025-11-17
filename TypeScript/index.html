@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Book Tracker</title>
+</head>
+
+<body class="bg-gray-100 min-h-screen p-8">
+
+    <h1 class="text-4xl font-bold mb-6 text-center"> Book Tracker</h1>
+
+    <!-- FORM -->
+    <div class="bg-white shadow-xl rounded-2xl p-6 max-w-2xl mx-auto mb-10">
+        <h2 class="text-2xl font-semibold mb-4">Register a Book</h2>
+
+        <form id="bookForm" class="space-y-4">
+
+            <input class="w-full border p-3 rounded-xl" name="title" placeholder="Title" required />
+
+            <input class="w-full border p-3 rounded-xl" name="author" placeholder="Author" required />
+
+            <input class="w-full border p-3 rounded-xl" type="number" name="pages" min="1" placeholder="Number of pages"
+                required />
+
+            <select name="status" class="w-full border p-3 rounded-xl" required>
+                <option>Read</option>
+                <option>Re-read</option>
+                <option>DNF</option>
+                <option>Currently reading</option>
+                <option>Returned Unread</option>
+                <option>Want to read</option>
+            </select>
+
+            <input class="w-full border p-3 rounded-xl" type="number" name="price" min="0" step="0.01"
+                placeholder="Price" required />
+
+            <input class="w-full border p-3 rounded-xl" type="number" name="pagesRead" min="0" placeholder="Pages Read"
+                required />
+
+            <select name="format" class="w-full border p-3 rounded-xl" required>
+                <option>Print</option>
+                <option>PDF</option>
+                <option>Ebook</option>
+                <option>AudioBook</option>
+            </select>
+
+            <input class="w-full border p-3 rounded-xl" name="suggestedBy" placeholder="Suggested by" />
+
+            <button class="w-full p-3 bg-blue-600 hover:bg-blue-700 text-white rounded-xl font-semibold">
+                Add Book
+            </button>
+
+        </form>
+    </div>
+
+    <!-- GLOBAL STATS -->
+    <div class="max-w-3xl mx-auto bg-white p-6 rounded-2xl shadow mb-10">
+        <h2 class="text-2xl font-semibold mb-4">Global Statistics</h2>
+        <p id="statsBooks" class="text-lg"></p>
+        <p id="statsPages" class="text-lg"></p>
+    </div>
+
+    <!-- BOOK LIST -->
+    <div class="max-w-3xl mx-auto bg-white p-6 rounded-2xl shadow">
+        <h2 class="text-2xl font-semibold mb-4">Your Books</h2>
+        <div id="bookList" class="space-y-4"></div>
+    </div>
+
+    <script src="public/script.js"></script>
+</body>
+
+</html>
